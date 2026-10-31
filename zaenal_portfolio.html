@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio kreatif Zaenal Abidin — video editing, videografi, fotografi, dan desain grafis.">
+  <title>Zaenal Abidin | Creative Portfolio</title>
+  <style>
+    :root {
+      --bg: #070b16;
+      --panel: #0d1528;
+      --panel2: #101d35;
+      --blue: #278bff;
+      --cyan: #62d7ff;
+      --text: #edf4ff;
+      --muted: #9aabc5;
+      --line: rgba(112, 165, 235, .18);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(39,139,255,.16), transparent 35%),
+        radial-gradient(ellipse at 0% 40%, rgba(26,75,145,.12), transparent 32%),
+        var(--bg);
+      color: var(--text); line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1100px, 90%); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(7,11,22,.82); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: .08em; }
+    .brand span { color: var(--cyan); }
+    .navlinks { display: flex; gap: 25px; color: var(--muted); font-size: .9rem; }
+    .navlinks a:hover { color: var(--cyan); }
+    .hero { min-height: 610px; display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 45px; padding: 85px 0; }
+    .eyebrow { color: var(--cyan); font-size: .82rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); line-height: 1.04; margin: 18px 0; letter-spacing: -.055em; }
+    h1 span { color: var(--cyan); }
+    .hero p { color: var(--muted); max-width: 590px; font-size: 1.05rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .btn { padding: 12px 19px; border-radius: 9px; font-weight: 700; border: 1px solid var(--blue); transition: .2s; }
+    .btn.primary { background: linear-gradient(120deg, #1674e8, #21a8ed); color: white; }
+    .btn.secondary { color: var(--cyan); background: rgba(39,139,255,.07); }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(39,139,255,.18); }
+    .hero-card { background: linear-gradient(145deg, rgba(24,53,94,.85), rgba(11,18,34,.95)); border: 1px solid var(--line); border-radius: 24px; padding: 30px; box-shadow: 0 25px 80px rgba(0,0,0,.28); }
+    .monogram { width: 100%; aspect-ratio: 1.12; border-radius: 18px; display: grid; place-items: center; background: radial-gradient(circle at 50% 35%, #1b5eaa, #0b1730 70%); border: 1px solid rgba(98,215,255,.25); font-size: clamp(4rem, 10vw, 7rem); font-weight: 900; letter-spacing: -.1em; color: #bdeaff; text-shadow: 0 0 35px rgba(98,215,255,.35); }
+    .card-caption { margin-top: 18px; color: var(--muted); font-size: .9rem; }
+    section { padding: 78px 0; }
+    .section-head { margin-bottom: 30px; }
+    .section-head h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); margin-top: 7px; letter-spacing: -.035em; }
+    .section-head p { color: var(--muted); max-width: 650px; margin-top: 8px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .panel { background: linear-gradient(145deg, rgba(16,29,53,.9), rgba(10,17,32,.92)); border: 1px solid var(--line); border-radius: 16px; padding: 25px; }
+    .panel p { color: var(--muted); }
+    .statrow { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 18px; }
+    .stat { background: rgba(39,139,255,.08); border: 1px solid var(--line); padding: 15px; border-radius: 12px; }
+    .stat strong { display: block; color: var(--cyan); font-size: 1.4rem; }
+    .stat small { color: var(--muted); }
+    .timeline { border-left: 2px solid rgba(98,215,255,.35); margin-left: 8px; padding-left: 25px; }
+    .timeline-item { position: relative; padding: 0 0 25px; }
+    .timeline-item::before { content:""; position:absolute; left:-33px; top:7px; width:13px; height:13px; border-radius:50%; background:var(--cyan); box-shadow:0 0 15px rgba(98,215,255,.55); }
+    .timeline-item h3 { font-size: 1.12rem; }
+    .meta { color: var(--cyan); font-size: .88rem; margin: 3px 0 8px; }
+    .timeline-item p, .timeline-item li { color: var(--muted); }
+    ul { padding-left: 19px; }
+    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+    .tag { padding: 8px 12px; border-radius: 8px; background: rgba(39,139,255,.09); border: 1px solid var(--line); color: #cfe8ff; font-size: .9rem; }
+    .education { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .edu { padding: 20px; border-radius: 13px; background: var(--panel); border: 1px solid var(--line); }
+    .edu span { color: var(--cyan); font-size: .78rem; letter-spacing: .12em; }
+    .edu h3 { margin-top: 7px; font-size: 1rem; }
+    .contact { text-align: center; background: linear-gradient(135deg, rgba(15,48,91,.65), rgba(10,17,32,.65)); border: 1px solid var(--line); border-radius: 22px; padding: 42px 25px; }
+    .contact p { color: var(--muted); max-width: 580px; margin: 10px auto 22px; }
+    footer { border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted); font-size: .85rem; text-align: center; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: .65s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    @media (max-width: 760px) {
+      .navlinks { gap: 12px; font-size: .78rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; padding: 70px 0; }
+      .hero-card { max-width: 390px; }
+      .about-grid, .skills { grid-template-columns: 1fr; }
+      .education { grid-template-columns: 1fr; }
+      section { padding: 58px 0; }
+    }
+    @media (max-width: 430px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 14px 0; gap: 8px; }
+      .navlinks { width: 100%; justify-content: space-between; }
+      .navlinks a { font-size: .74rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="#home">ZAENAL<span>.</span></a>
+      <div class="navlinks">
+        <a href="#about">Tentang</a><a href="#experience">Pengalaman</a><a href="#skills">Keahlian</a><a href="#education">Pendidikan</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Creative Portfolio</div>
+        <h1>ZAENAL<br><span>ABIDIN.</span></h1>
+        <p>Pelajar SMK jurusan Desain Komunikasi Visual yang memiliki minat pada video editing, videografi, fotografi, dan desain grafis. Tertarik pada proses kreatif, produksi konten, dan kerja kolaboratif.</p>
+        <div class="actions">
+          <a class="btn primary" href="#experience">Lihat Pengalaman</a>
+          <a class="btn secondary" href="#skills">Jelajahi Keahlian</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="monogram">ZA</div>
+        <div class="card-caption">Visual storytelling · Editing · Creative media</div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">01 / About me</div><h2>Tentang Saya</h2></div>
+        <div class="about-grid">
+          <div class="panel reveal">
+            <p>Saya merupakan pelajar SMK jurusan DKV dengan minat di bidang editing video, videografi, fotografi, dan desain grafis. Aktif dalam kegiatan media sekolah serta terbiasa bekerja dalam tim dan mengikuti proses produksi konten.</p>
+          </div>
+          <div class="panel reveal">
+            <h3>Fokus Kreatif</h3>
+            <div class="statrow">
+              <div class="stat"><strong>01</strong><small>Video Editing</small></div>
+              <div class="stat"><strong>02</strong><small>Videografi</small></div>
+              <div class="stat"><strong>03</strong><small>Fotografi</small></div>
+              <div class="stat"><strong>04</strong><small>Desain Grafis</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">02 / Experience</div><h2>Pengalaman Organisasi</h2><p>Pengalaman dalam kegiatan media sekolah dan produksi konten.</p></div>
+        <div class="panel reveal">
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Tim Media Sekolah</h3>
+              <div class="meta">Editor & Tim Produksi · 2025–Sekarang</div>
+              <ul>
+                <li>Melakukan editing video untuk kegiatan dan proyek media sekolah.</li>
+                <li>Terlibat dalam proses produksi konten, mulai dari pengambilan gambar hingga tahap editing.</li>
+                <li>Melakukan peliputan kegiatan eksternal, seperti perlombaan tenis meja dan perayaan Hari Kemerdekaan.</li>
+                <li>Bekerja sama dengan tim dalam peliputan dan produksi berbagai kegiatan.</li>
+                <li>Berpartisipasi dalam lomba film pendek sebagai bagian dari pengembangan pengalaman di bidang produksi audiovisual.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">03 / Skills</div><h2>Keahlian</h2><p>Kemampuan teknis dan kemampuan kerja yang tercantum dalam CV.</p></div>
+        <div class="skills">
+          <div class="panel reveal">
+            <h3>Hard Skills</h3>
+            <div class="skill-list">
+              <span class="tag">Video Editing</span><span class="tag">Fotografi</span><span class="tag">Videografi</span><span class="tag">Desain Grafis</span><span class="tag">Premiere Pro</span><span class="tag">Alight Motion</span><span class="tag">Canva</span><span class="tag">CapCut</span>
+            </div>
+          </div>
+          <div class="panel reveal">
+            <h3>Soft Skills</h3>
+            <div class="skill-list">
+              <span class="tag">Teamwork</span><span class="tag">Communication</span><span class="tag">Creativity</span><span class="tag">Problem Solving</span><span class="tag">Responsibility</span><span class="tag">Time Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">04 / Education</div><h2>Pendidikan</h2></div>
+        <div class="education">
+          <div class="edu reveal"><span>01</span><h3>SD Negeri Bojong 4</h3></div>
+          <div class="edu reveal"><span>02</span><h3>MTs Negeri 2 Kota Tangerang</h3></div>
+          <div class="edu reveal"><span>03</span><h3>SMK An Nurmaniyah</h3><p class="meta">Jurusan DKV</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact reveal">
+          <div class="eyebrow">Let's connect</div>
+          <h2>Terima kasih sudah berkunjung.</h2>
+          <p>Portofolio ini menjadi ruang untuk mengenal minat, pengalaman, dan proses kreatif saya. Karya visual akan ditambahkan secara bertahap.</p>
+          <a class="btn secondary" href="#home">Kembali ke atas ↑</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">© 2026 Zaenal Abidin · Creative Portfolio</div></footer>
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
